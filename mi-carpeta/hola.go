@@ -1,7 +1,9 @@
-package carpeta
+package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	fmt.Println("Hola Will")
+	fmt.Println("Hello will")
 }
