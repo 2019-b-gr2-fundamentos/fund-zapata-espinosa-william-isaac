@@ -31,4 +31,7 @@ func main() {
 	// Go infiere el tipo de las variables inicializadas.
 	var d = true
 	fmt.Println(d)
+
+	var e float64 = 36.98
+	fmt.Println(e)
 }
