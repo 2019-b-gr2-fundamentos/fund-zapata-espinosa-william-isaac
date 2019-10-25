@@ -1,0 +1,23 @@
+Deber 3 
+Autor: William Zapata
+
+Gestionador de paquetes de GO
+
+-La gestión de paquetes es una de las cosas que Go siempre se ha perdido. 
+Uno de los principales inconvenientes de la versión anterior (anterior a 1.11) 
+fue la falta de soporte para administrar versiones de dependencia y habilitar compilaciones reproducibles. 
+La comunidad ha desarrollado herramientas y administradores de paquetes como Glide,
+go dep y muchos otros que sirven como soluciones de facto para el control de versiones de dependencias.
+
+-Desafortunadamente, Go no admite la versión del paquete ni proporciona un administrador de paquetes, 
+pero una propuesta está en el tercer link.
+
+
+
+
+
+Netgrafia:
+
+https://deepsource.io/blog/go-modules/
+https://medium.com/rungo/everything-you-need-to-know-about-packages-in-go-b8bac62b74cc
+https://github.com/golang/proposal/blob/master/design/24301-versioned-go.md
