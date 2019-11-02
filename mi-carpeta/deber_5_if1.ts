@@ -3,7 +3,7 @@ console.log("\nSaber si tienes que ir a vielar al final del semestre\n");
 const n1String = prompt("Ingrese su primera nota: ");
 const n1 = Number(n1String);
 if(n1>2 && n1<=5){
-console.log("Mejor sigue ahorrando"); 
+console.log("Mejor sigue ahorrando para la segunda matricula"); 
 }
 else if(n1>5 && n1<=8){
 console.log("Sigue asi y pueda que vielas");
@@ -25,5 +25,5 @@ else if(res>=13.5 && res<=13.9){
 console.log("Ruega al ing que te hanga pasar e invitale la viela");    
 }
 else if(res>=14 && res<=20){
-console.log("Anda viela como dios manda ");
+console.log("Anda viela como dios manda");
 }
