@@ -79,3 +79,10 @@ else if (deberes % 2 != 0){
 
 }
 while (deberes < 50 );
+2 Fundamentos
+3 Calculo
+5 Fisic
+11 Ingles
+
+
+

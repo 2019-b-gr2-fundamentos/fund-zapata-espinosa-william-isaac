@@ -72,4 +72,11 @@ do {
         console.log("Hice " + Analisis + " deberes de Analisis.");
         console.log("Hice " + Algebra + " deberes de Compiladores.");
     }
-} while (deberes < 50);
+} while (deberes < 50)
+2 Fundamentos
+3 Calculo
+5 Fisic
+11 Ingles
+
+
+*/ 
