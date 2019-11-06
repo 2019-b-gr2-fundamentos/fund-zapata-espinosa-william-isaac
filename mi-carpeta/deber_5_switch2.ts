@@ -1,5 +1,5 @@
 // Baul de los recuerdos (de la musica)
-console.log("Bienvedido, conoce mas datos interesantes de los generos de musica");
+console.log("Bienvedidos, conoce mas datos interesantes de los generos de musica");
 console.log("1. Rock");
 console.log("2. Pop");
 console.log("3. Reggaeton");
@@ -17,10 +17,10 @@ switch(menu){
         break;
     case (3):
         console.log("Los cantantes mas destacados del Reggaeton son: Daddy Yanke, Don Omar, Tego Calderon y Tito el Bambino");
-        console.log("Las canciones más escuchadas en este año: Felices los 4, Vacaciones, Krippy Crush y 11 pm ");
+        console.log("Las canciones más escuchadas en este año: Felices los 4, Vacaciones, Krippy Crush y 11 pm");
         break;
     case (4):
-        console.log("Los mejores raperos del mundo: Eminem, Porta, Canserbero y Nach ");
+        console.log("Los mejores raperos del mundo: Eminem, Porta, Canserbero y Nach");
         console.log("Las canciones más sonadas son Stan, Juicy, bella y bestia y It was a Good day");
         break;
     default:

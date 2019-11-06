@@ -1,6 +1,6 @@
 // Juego para que adivinen tu color favorito 
 console.log("Bienvedido");
-var colorFavorito ;
+let colorFavorito ;
 colorFavorito = prompt("Ingrese su color favorito: ");
 switch(colorFavorito){
     case "amarillo":
