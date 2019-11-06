@@ -13,7 +13,7 @@ switch(fruta){
             break;
 }
 console.log("A contunuacion la siguiente adivinaza: ");
-console.log("Figura redonda, cuerpo colorado, tripas de hueso y zancos de palo ");
+console.log("Figura redonda, cuerpo colorado, tripas de hueso y zancos de palo");
 let fruta2;
 fruta2 = prompt("Ingrese su respuesta: ");
 switch(fruta2){

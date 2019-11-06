@@ -3,29 +3,27 @@ package main
 
 import (
 	"fmt"
-	"strconv"
 )
 
 func main() {
 
 	fmt.Println("Saber si tienes que ir a vielar al final del semestre")
-	fmt.Printf("Ingrese su primera nota: ")
-	var n1 string
+	fmt.Println("Ingrese su primera nota: ")
+	var n1 float64
 	fmt.Scan(&n1)
-	fltStr, _ := strconv.ParseFloat("n1", 64)
-	if fltStr >= 2 && fltStr <= 5 {
-		fmt.Printf("Mejor sigue ahorrando para la segunda matricula")
-	} else if fltStr > 5 && fltStr <= 8 {
-		fmt.Printf("Sigue asi y pueda que vielas")
-	} else if fltStr > 8 && fltStr <= 10 {
+
+	if n1 >= 2 && n1 <= 5 {
+		fmt.Println("Mejor sigue ahorrando para la segunda matricula")
+	} else if n1 > 5 && n1 <= 8 {
+		fmt.Println("Sigue asi y pueda que vielas")
+	} else if n1 > 8 && n1 <= 10 {
 		fmt.Println("Anda este viernes a vielar : )")
 	}
-	fmt.Printf("Ingrese su segunda nota: ")
-	var n2 string
+	fmt.Println("Ingrese su segunda nota: ")
+	var n2 float64
 	var resultado float64
 	fmt.Scan(&n2)
-	fltStr2, _ := strconv.ParseFloat("n2", 64)
-	resultado = fltStr + fltStr2
+	resultado = n1 + n2
 	if resultado >= 8.5 && resultado <= 8.9 {
 		fmt.Println("Anda pegate la arrodillada de tu vida para llegar al suple")
 	} else if resultado > 8.9 && resultado <= 13.4 {
