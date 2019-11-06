@@ -1,5 +1,5 @@
 // Calculadora
-console.log("Bienvenidos que operacion desea realizar ");
+console.log("Bienvenidos que operacion desea realizar");
 console.log("1. Suma") 
 console.log("2. Resta") 
 console.log("3. Multiplicacion") 
