@@ -2,10 +2,10 @@
 1 Analisis -> 190
 2 Algebra -> 192
 3 Compiladores -> 194
-5 Fundamentos ->
+5 Fundamentos -> 144
 7 Calculo -> 120
 11 Fisica -> 84
-13 Ingles ->
+13 Ingles ->76
 
 Si es impar le aumentamos a Analisis // 17
 Si es par le aumentamos a Algebra // 17
