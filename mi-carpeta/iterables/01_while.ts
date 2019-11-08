@@ -72,17 +72,14 @@ else if (deberes % 2 ==0) {
 } 
 else if (deberes % 2 != 0){
     Analisis = Analisis +1
-    console.log(`Hice ${Compiladores} deberes de Compiladores.`);
-    console.log(`Hice ${Analisis} deberes de Analisis.`);
-    console.log(`Hice ${Algebra} deberes de Compiladores.`);
+    
 } 
 
 }
 while (deberes < 50 );
-2 Fundamentos
-3 Calculo
-5 Fisic
-11 Ingles
+console.log(`Hice ${Compiladores} deberes de Compiladores.`);
+console.log(`Hice ${Analisis} deberes de Analisis.`);
+console.log(`Hice ${Algebra} deberes de Algebra.`);
 
 
 
