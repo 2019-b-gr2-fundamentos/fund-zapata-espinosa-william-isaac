@@ -1,11 +1,11 @@
 /* 
-1 Analisis
-2 Algebra
-3 Compiladores
-5 Fundamentos 
-7 Calculo
-11 Fisic
-13 Ingles
+1 Analisis -> 190
+2 Algebra -> 192
+3 Compiladores -> 194
+5 Fundamentos -> 120
+7 Calculo -> 144
+11 Fisica ->  84
+13 Ingles -> 76
 
 Si es impar le aumentamos a Analisis // 17
 Si es par le aumentamos a Algebra // 17
