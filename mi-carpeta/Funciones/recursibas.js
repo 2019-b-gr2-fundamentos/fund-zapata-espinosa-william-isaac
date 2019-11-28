@@ -8,16 +8,21 @@ function imprimirMensajeNvECES(mensaje, numeroVences) {
         imprimirMensajeNvECES(mensaje, nuevoNumeroVeces);
     }
 }
-function main() {
-    imprimirMensajeNvECES('holas', 3);
-    imprimirElemenrtosDeUnArreglo();
-}
-function imprimirElemenrtosDeUnArreglo(arregloa, longitud, indice) {
-    longitud = arregloa.length;
-    if (longitud < indice) {
-        console.log(arregloa);
-        indice = indice + 1;
+//function main(){
+//imprimirMensajeNvECES('holas',3);
+//}
+var arregloa = [1, 2, 3, 4, 5];
+console.log(arregloa);
+function imprimirElemenrtosDeUnArreglo(arregloa, indice) {
+    if (indice <= 4) {
+        console.log(arregloa[indice]);
+        var indiceNuevos = indice + 1;
+        imprimirElemenrtosDeUnArreglo(arregloa, indiceNuevos);
     }
     else {
+        console.log("Se ha mostrado todos los elementos XD");
     }
+}
+function main() {
+    imprimirElemenrtosDeUnArreglo(arregloa, 0);
 }

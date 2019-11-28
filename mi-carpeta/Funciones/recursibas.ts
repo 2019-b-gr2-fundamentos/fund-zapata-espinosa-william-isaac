@@ -10,21 +10,26 @@ if(numeroVences == 0){
 
 }
 
+//function main(){
+    //imprimirMensajeNvECES('holas',3);
+    
+//}
+
+
+const arregloa = [1,2,3,4,5];
+console.log(arregloa);
+
+function imprimirElemenrtosDeUnArreglo(arregloa: Number[], indice:number):void{
+if(indice <= 4){
+    console.log(arregloa[indice]);
+    const indiceNuevos = indice + 1;
+    imprimirElemenrtosDeUnArreglo(arregloa, indiceNuevos);
+}else {
+    console.log("Se ha mostrado todos los elementos XD")
+}
+
+}
+
 function main(){
-    imprimirMensajeNvECES('holas',3);
-    imprimirElemenrtosDeUnArreglo();
-}
-
-
-
-function imprimirElemenrtosDeUnArreglo(arregloa: Number[],longitud:number, indice:number):void{
-    longitud = arregloa.length
-if(longitud<indice){
-    console.log(arregloa);
-    indice = indice + 1;
-}else{
-
-}
-
-
+    imprimirElemenrtosDeUnArreglo(arregloa,0);
 }
