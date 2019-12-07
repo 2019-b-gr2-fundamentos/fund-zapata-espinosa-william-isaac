@@ -7,9 +7,6 @@ import (
 
 func Artistas() {
 	fmt.Println(".:Bienvenidos:.")
-	fmt.Println("El registro es: ")
-	artistas := []string{"Queen", "AC/DC", "Black Sabbath"}
-	fmt.Printf("%q\n", artistas)
 	fmt.Println("!!! Recuerde que el INDICE EMPIEZA desde la posicion CERO !!!")
 	fmt.Println("Seleccione la accion que desea realizar sobre el registro")
 	fmt.Println("1. Crear")
@@ -25,7 +22,14 @@ func Artistas() {
 	var estaValido bool = esCrear || esActualizar || esEliminar
 
 	if estaValido {
+		fmt.Println("El registro es: ")
+		artistas := []string{"Queen", "AC/DC", "Black Sabbath"}
+		fmt.Printf("%q\n", artistas)
 		if esCrear {
+			fmt.Println("Ingrese el nuevo Artista: ")
+			var nuevoArtista string
+			fmt.Scanln(&nuevoArtista)
+			artistas = append(artistas, nuevoArtista)
 
 		}
 		if esActualizar {
@@ -33,9 +37,9 @@ func Artistas() {
 			var indice int
 			fmt.Scanln(&indice)
 			fmt.Println("Ingrese el nuevo Artista")
-			var nuevoArtista string
-			fmt.Scanln(&nuevoArtista)
-			artistas[indice] = nuevoArtista
+			var artistaActualizado string
+			fmt.Scanln(&artistaActualizado)
+			artistas[indice] = artistaActualizado
 		}
 		if esEliminar {
 			fmt.Println("Ingrese el indice del elemento a eliminar")
