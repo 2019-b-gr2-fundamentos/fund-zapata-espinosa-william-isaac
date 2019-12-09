@@ -20,8 +20,8 @@ func dividir(numUno, numDos float64) float64 {
 func volumenCono(numUno, numDos float64) float64 {
 	return dividir(1.00, 3.00) * (3.1415) * (numUno) * (math.Pow(numDos, 2.00))
 }
-func conversion(gramos float64) float64 {
-	return gramos * 1000
+func conversion(numUno float64) float64 {
+	return numUno * 1000
 }
 func MetodoDeNewton(numUno float64) float64 {
 
@@ -74,7 +74,6 @@ func calculadora() {
 		fmt.Println("Si es la !! opcion 8 !! tener presente que el primer dato ingresado es la altura y el segundo dato es el radio")
 		fmt.Println("Si es la !! opcion 10 !! debe ingresar el salario del trabajador")
 		var resultado float64 = 0
-		var gramos float64 = 0
 		if esSuma {
 			resultado = sumar(numUno, numDos)
 		}
@@ -88,7 +87,7 @@ func calculadora() {
 			resultado = dividir(numUno, numDos)
 		}
 		if esConversion {
-			resultado = conversion(gramos)
+			resultado = conversion(numUno)
 		}
 		if esRaizCuadrada {
 			resultado = MetodoDeNewton(numUno)
