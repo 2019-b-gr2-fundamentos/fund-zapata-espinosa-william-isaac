@@ -18,34 +18,14 @@ func dividir(numUno, numDos float64) float64 {
 	return numUno / numDos
 }
 func volumenCono(numUno, numDos float64) float64 {
-	return (1 / 3)(3.1415)(numUno)(math.Pow(numDos, 2))
+	return dividir(1.00, 3.00) * (3.1415) * (numUno) * (math.Pow(numDos, 2.00))
 }
 func conversion(gramos float64) float64 {
 	return gramos * 1000
 }
-func MetodoDeNewton(numUno float64, inicia int, margen float64) float64 {
-	var respuesta float64 = 0
-	var z float64
-	var dif float64
-	//Cambiar z al entero cuadrado inferior a x para calcular
-	//otras raices
-	if inicia == 1 {
-		z = 1
-	}
-	//fin semilla
-	if inicia == 0 {
-		z = numUno
-	}
-	//Para calcular otra raíz cambiar el primer 2 por
-	//el numero cuya raiz cuadrada se desea calcular
-	z = (z + 2/z) / 2
-	dif = numUno - z
-	if dif > margen {
-		respuesta = MetodoDeNewton(z, 0, margen)
-	} else {
-		respuesta = z
-	}
-	return respuesta
+func MetodoDeNewton(numUno float64) float64 {
+
+	return math.Sqrt(numUno)
 }
 func Iva(numUno float64) float64 {
 	return numUno * 0.12
@@ -89,10 +69,10 @@ func calculadora() {
 		var numUno float64 = 0
 		fmt.Scanln(&numUno)
 		fmt.Println("Ingrese el segundo numero: ")
-		fmt.Println("Si es la !! opcion 8 !! tener presente que el primer dato ingresado es la altura y el segundo dato es el radio")
-		fmt.Println("Si es la !! opcion 10 !! debe ingresar el salario del trabajador")
 		var numDos float64 = 0
 		fmt.Scanln(&numDos)
+		fmt.Println("Si es la !! opcion 8 !! tener presente que el primer dato ingresado es la altura y el segundo dato es el radio")
+		fmt.Println("Si es la !! opcion 10 !! debe ingresar el salario del trabajador")
 		var resultado float64 = 0
 		var gramos float64 = 0
 		if esSuma {
@@ -111,7 +91,7 @@ func calculadora() {
 			resultado = conversion(gramos)
 		}
 		if esRaizCuadrada {
-			resultado = MetodoDeNewton(numUno, 1, 0000001)
+			resultado = MetodoDeNewton(numUno)
 		}
 		if esIva {
 			resultado = Iva(numUno)
