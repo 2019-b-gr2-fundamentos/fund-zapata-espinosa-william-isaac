@@ -43,7 +43,7 @@ func calculadora() {
 	fmt.Println("3. Multiplicacion")
 	fmt.Println("4. Divisicion")
 	fmt.Println("5. Volumen de un cono")
-	fmt.Println("6. Conversion: g a kg")
+	fmt.Println("6. Conversion: kg a g")
 	fmt.Println("7. Raiz cuadrada ")
 	fmt.Println("8. Calcular el iva")
 	fmt.Println("9. Calcular la hipotenusa")
