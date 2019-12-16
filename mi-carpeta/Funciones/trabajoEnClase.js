@@ -21,11 +21,10 @@ function productoCruz(vectores, indice, longitud) {
     for (indice = 0; indice <= 3; indice++) {
         longitud = longitudv - 1;
         multiplicado = arregloDosDimensiones[0][indice] * arregloDosDimensiones[1][longitud];
-        suma = multiplicado;
+        suma = suma + multiplicado;
     }
 }
 function main() {
-    arregloDosDimensiones;
 }
 /*
 1. definir el tamaño
