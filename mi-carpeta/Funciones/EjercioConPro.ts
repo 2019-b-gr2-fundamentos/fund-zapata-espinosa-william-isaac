@@ -1,4 +1,13 @@
 function compararMatriz(matrizUno:number[][],matrizDos:number[][]):boolean {
+  const esValido = tieneMatricesIgualesDimensiones (matrizUno,matrizDos);
+  if(esValido){
+      // Comparar los valores
+      return true
+  } else {
+      return false
+  }
+}
+function tieneMatricesIgualesDimensiones(matrizUno: number [][] , matrizDos: number [][]): boolean{
     const matrizUnoPrimeraDimension = optenerPrimerDimension(
         matrizUno
         );
@@ -15,9 +24,20 @@ function compararMatriz(matrizUno:number[][],matrizDos:number[][]):boolean {
     console.log(matrizUnoSegundaDimension);
     console.log(matrizDosPrimeraDimension);
     console.log(matrizDosSegundaDimension);
-    return true;
+    const noHayFalsos = matrizUnoPrimeraDimension != false && 
+                        matrizDosPrimeraDimension != false && 
+                        matrizUnoSegundaDimension != false && 
+                        matrizDosSegundaDimension !=false
+    const igualDimension = matrizUnoPrimeraDimension == matrizDosPrimeraDimension &&
+                           matrizUnoSegundaDimension == matrizDosSegundaDimension
+    if(noHayFalsos) {
+        if(igualDimension){
+            return true;
+        }
+    }  else {
+        return false;
+    }
 }
-
 
 // VALIDACION 
 function optenerPrimerDimension(matrizUno:number[][]):number | boolean{
@@ -64,7 +84,6 @@ function optenerSegundaDimension(matrizUno:number[][]):number | boolean{
 
 const arregloMatriz = [[1,2],[3,4,5],[8,9,8]]
 
-
 function verificarTodosElementosDeUnArregloSonArreglo(arreglo: any[]){
     for(let i=0;i<arreglo.length;i++){
         const elementoActual = arreglo [i];
@@ -75,17 +94,33 @@ function verificarTodosElementosDeUnArregloSonArreglo(arreglo: any[]){
     }
     return true
 }
+function tienenMismosValores(matrizUno: number[][], matrizDos: number[][]): boolean{
+const primeraDimension = matrizUno.length
+const segundaDimension = matrizUno[0].length
+let banderaSonIguales = true;
+for(let i = 0;i<primeraDimension; i++){
+    for(let j=0;j<segundaDimension; j++){
+        const valorActualM1 = matrizUno[i][j]
+        const valorActualM2 = matrizDos[i][j]
+        if(valorActualM1 != valorActualM2){
+            banderaSonIguales = false;
+        }
+    }
+}
+return banderaSonIguales;
+}
 
 
 function main(){
     const matrizUno = [
         [1,2],
-        [3]
+        [3,3]
     ];
     const matrizDos = [
-        [1,2],
+        [1,3],
         [3,4],
     ];
-    compararMatriz(matrizUno, matrizDos);
+    const resultado = compararMatriz(matrizUno, matrizDos)
+    console.log("Resultado: ", resultado)
 }
 main();
