@@ -1,0 +1,17 @@
+{
+    "nombre":"William",
+    "apellido": "Zapata",
+    "edad": 30,
+    "casado": false,
+    "hijos": null,
+    "mascotas":["Coco"],
+    "primo":{
+        "nombre":"Jerremy",
+        "apellido": "Ramirez",
+        "edad": 4,
+        "casado": false,
+        "hijos": null,
+        "mascotas":[]  
+    }
+
+}

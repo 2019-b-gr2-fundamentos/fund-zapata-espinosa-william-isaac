@@ -1,0 +1,16 @@
+{
+  "name": "william-zapata",
+  "version": "1.0.0",
+  "description": "Libreria de fundamentos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fundamentos",
+    "epn",
+    "libreria_ejemplo"
+  ],
+  "author": "William Zapata",
+  "license": "ISC"
+}
