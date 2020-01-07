@@ -8,3 +8,10 @@ INFO  shutting down Metals
 INFO  time: initialize in 1.99s
 WARN  no build tool detected in workspace 'C:\Users\zapat\OneDrive\Documentos\GitHub\fund-zapata-espinosa-william-isaac\mi-carpeta'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
 INFO  shutting down Metals
+INFO  time: initialize in 1.61s
+WARN  no build tool detected in workspace 'C:\Users\zapat\OneDrive\Documentos\GitHub\fund-zapata-espinosa-william-isaac\mi-carpeta'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+ene 06, 2020 6:21:34 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFORMACIÓN: Unsupported notification method: $/setTraceNotification
+INFO  shutting down Metals
+INFO  time: initialize in 1.03s
+WARN  no build tool detected in workspace 'C:\Users\zapat\OneDrive\Documentos\GitHub\fund-zapata-espinosa-william-isaac\mi-carpeta'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
