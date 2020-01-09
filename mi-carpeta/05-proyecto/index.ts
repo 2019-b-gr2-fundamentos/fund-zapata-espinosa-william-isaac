@@ -30,3 +30,6 @@ console.log('La respuesta es: ',respuesta6);
 import * as promedio_de_2_numerosLibreria from 'resta_de_wz/promedio_de_2_numeros'
 const respuesta7 = promedio_de_2_numerosLibreria(2,1);
 console.log('La respuesta es: ',respuesta7);
+
+import * as pi from 'resta_de_wz/promedio_de_2_numeros'
+console.log('La constante pi es: ',pi);
