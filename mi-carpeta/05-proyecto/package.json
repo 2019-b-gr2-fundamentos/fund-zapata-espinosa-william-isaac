@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "resta_de_wz": "^1.0.0",
     "william-zapata": "^1.0.0"
   }
 }
