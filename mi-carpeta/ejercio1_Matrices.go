@@ -3,15 +3,8 @@ package main
 import (
 	"fmt"
 )
-
-func compararMatriz(
-	matrizUno: float64[][],
-	matrizDos: float64[][]
-): bool {
-	const esValido = tienenMatricesIgualesDimensiones (
-		matrizUno,
-		matrizDos
-	)
+func compararMatriz(matrizUno [][] float64 , matrizDos [][] float64) bool {
+	const esValido = tienenMatricesIgualesDimensiones (matrizUno, matrizDos)
 	if(esValido){
 		return tieneMismosValores(
 			matrizUno,
@@ -20,12 +13,8 @@ func compararMatriz(
 	} else {
 		return false
 	}
-}
-
-func tienenMismosValores(
-	matrizUno: float64[][],
-	matrizDos: float64[][]
-): bool{
+};
+func tienenMismosValores(matrizUno [][] float64, matrizDos [][] float64) bool{
 	const primeraDimension = len(matrizUno)
 	const segundaDimension = len(matrizUno[0])
 	var banderaSonIguales = true
@@ -39,24 +28,12 @@ func tienenMismosValores(
 		}
 	}
 	return banderaSonIguales
-}
-
-func tienenMatricesIgualesDimensiones(
-	matrizUno: float64[][],
-	matrizDos: float64[][]
-): bool {
-	const matrizUnoPrimeraDimension = obtenerPrimeraDimension(
-        matrizUno
-        )
-    const matrizUnoSegundaDimension = obtenerSegundaDimension(
-        matrizUno
-        )
-    const matrizDosPrimeraDimension = obtenerPrimeraDimension(
-        matrizDos
-        )
-    const matrizDosSegundaDimension = obtenerSegundaDimension(
-        matrizDos
-		)
+};
+func tienenMatricesIgualesDimensiones(matrizUno [][] float64, matrizDos [][ float64) bool {
+	const matrizUnoPrimeraDimension = obtenerPrimeraDimension(matrizUno)
+    const matrizUnoSegundaDimension = obtenerSegundaDimension(matrizUno)
+    const matrizDosPrimeraDimension = obtenerPrimeraDimension(matrizDos)
+    const matrizDosSegundaDimension = obtenerSegundaDimension(matrizDos)
 	const noHayFalsos = matrizUnoPrimeraDimension != false && 
     matrizUnoSegundaDimension != false &&
     matrizDosPrimeraDimension != false && 
@@ -73,9 +50,8 @@ func tienenMatricesIgualesDimensiones(
         return false;
     }
 	
-}
-
-func obtenerPrimeraDimension(matrizUno: float64[][]): bool | float64{
+};
+func obtenerPrimeraDimension(matrizUno [][] float64) bool | float64{
 	const esValido = vericarTodosLosElementosdeUnArregloSonArreglo(matrizUno)
 	if(esValido){
 		const primeraDimensionArreglo = leg(matrizUno)
@@ -83,9 +59,8 @@ func obtenerPrimeraDimension(matrizUno: float64[][]): bool | float64{
 	} else {
 		return false
 	}
-}
-
-func obtenerSegundaDimension(matrizUno: float64[][]): bool | float64{
+};
+func obtenerSegundaDimension(matrizUno [][] float64) bool | float64{
 	const esValido = vericarTodosLosElementosdeUnArregloSonArreglo
 	if(esValido){
 		var longitudActualMaxima = 0
@@ -112,11 +87,8 @@ func obtenerSegundaDimension(matrizUno: float64[][]): bool | float64{
 	} else {
 		return false
 	}
-}
-
-func vericarTodosLosElementosdeUnArregloSonArreglo(
-	arreglo: float64[]
-) bool{
+};
+func vericarTodosLosElementosdeUnArregloSonArreglo(arreglo[] float64) bool{
 	for(let i = 0; i < arreglo.length; i++){
         const elementoActual = arreglo[i];
         const esUnArreglo = typeof elementoActual == 'object' &&
@@ -126,17 +98,17 @@ func vericarTodosLosElementosdeUnArregloSonArreglo(
         }
     }
     return true
+};
+func main(){
+	var x = [][] float64 {
+		{1,2,3},
+		{4,5,6}
 }
 
-func main(){
-	const x = [
-        [1,2,3],
-        [3,3,3]
-    ];
-    const y = [
-        [1,2,3],
-        [3,3,3]
-    ];
+var y = [][] float64 {
+	{,1,2,3},
+	{4,5,6}
+}
 	const resultado = compararMatriz(x, y);
 	fmt.Println('Resultado: ',resultado)
 }
