@@ -5,6 +5,7 @@ import (
 )
 
 func intercambiarDiagonal (matrizUno[][]float64) {
+	n := 2
 for i := 0; i < n; i++ {
 	if i != n/2 {
 	var auxlixiar = [i][i]float64
