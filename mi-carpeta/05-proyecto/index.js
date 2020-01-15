@@ -24,3 +24,5 @@ console.log('La respuesta es: ', respuesta6);
 var promedio_de_2_numerosLibreria = require('resta_de_wz/promedio_de_2_numeros');
 var respuesta7 = promedio_de_2_numerosLibreria(2, 1);
 console.log('La respuesta es: ', respuesta7);
+var pi = require('resta_de_wz/promedio_de_2_numeros');
+console.log('La constante pi es: ', pi);
