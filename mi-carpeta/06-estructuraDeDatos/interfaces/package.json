@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "(tsc 02-crud.ts || echo) && node 02-crud.js"
+    "start": "(tsc 02-crud.ts --target ES5 || echo) && node 02-crud.js"
   },
   "author": "",
   "license": "ISC",
