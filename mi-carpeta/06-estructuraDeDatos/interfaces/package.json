@@ -1,7 +1,6 @@
 {
   "name": "interfaces",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "(tsc 02-crud.ts --target ES5 || echo) && node 02-crud.js"
@@ -13,5 +12,6 @@
   },
   "devDependencies": {
     "@types/prompts": "^2.0.3"
-  }
+  },
+  "description": ""
 }

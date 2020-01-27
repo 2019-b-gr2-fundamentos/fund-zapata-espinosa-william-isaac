@@ -3,11 +3,54 @@ import { escribirArchivo } from "./03-escribir-archivo";
 import { Estudiante } from "./interfaces/estudiante.interface";
 import * as prompts from 'prompts'
 async function main(){
-let contador =1;
 const contenidoArchivo = leerArchivo('./ejemplo.txt');
 console.log('contenidoArchivo', contenidoArchivo);
-const arregloCargadoDeArchivo = JSON.parse(contenidoArchivo);
 
+// PARSEAR -> TEXTO -> Estructura en memoria
+/*
+
+{
+   "nombre": "Adrian"
+}
+
+*/
+let arregloCargadoDeArchivo; // undefined
+
+try{
+   arregloCargadoDeArchivo = JSON.parse(contenidoArchivo);
+} catch (error){
+   arregloCargadoDeArchivo = [];
+   console.log('ERROR PARSEADO archvo');
+}
+let contador = -1;
+// OPERADORES
+let minimoId = -1
+arregloCargadoDeArchivo.forEach( // no envia nada y no se les devuelve nada -> Iterar 
+   function(valorActual){
+   const idActual = valorActual.id;
+   if(idActual > minimoId){
+      minimoId = idActual
+   }
+}
+); 
+minimoId = minimoId + 1;
+contador = minimoId
+/*
+try {
+   console.log('1');
+   console.log('2');
+   console.log('3');
+   console.log('4');
+   var a = b;
+   // SYNTAX ERROR
+   throw new Error("EL ARCHIVO ESTA MAL PARSEADO ¡¡¡¡")
+   console.log('4');
+   console.log('5');
+} catch(error){
+   console.log(error);
+   console.log(':3')
+}
+*/
 const arregloEstudiantes: Estudiante[] = arregloCargadoDeArchivo;
 const arregloPreguntas = [
    {
@@ -79,7 +122,12 @@ const estudianteEncontrado = arregloEstudiantes.find(// retutn Condicion
 
    }
 );
-console.log(estudianteEncontrado)
 
+console.log(estudianteEncontrado)
+const arregloTexto = JSON.stringify(arregloEstudiantes);
+//  JSON.stringify -> Convierte objeto o arreglo en memoria
+//                  -> a texto
+console.log(arregloTexto)
+escribirArchivo('./ejemplo.txt',arregloTexto);
 }
 main().then().catch();
