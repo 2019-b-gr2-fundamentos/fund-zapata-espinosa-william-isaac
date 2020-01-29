@@ -100,7 +100,7 @@ function queDeseaHacer() {
                 case 0: return [4 /*yield*/, prompts({
                         type: 'text',
                         name: 'respuestas',
-                        message: '¿Que desea hacer? \n 1-crear otro registro \n 2-leer los registros actuales \n 3-actualizar datos \n 4-eliminar registros \n 5-SALIR'
+                        message: '¿Que desea hacer? \n 1-crear otro registro \n 2-leer los registros actuales \n 3-actualizar datos \n 4-eliminar registros \n 5-SALIR \n'
                     })];
                 case 1:
                     preguntas = _a.sent();
@@ -118,10 +118,10 @@ function queDeseaHacer() {
                         eliminarRegistro().then().catch();
                     }
                     else if (respuesta1 == 5) {
-                        console.log('ADIOS');
+                        console.log('ADIOS, ERES TU -> NO YO');
                     }
                     else {
-                        console.log('Elija una opcion valida');
+                        console.log('Elija una opcion valida, por favor!!!');
                         queDeseaHacer().then().catch();
                     }
                     ;
@@ -143,7 +143,7 @@ function leerRegistros() {
 ;
 function editarRegistro() {
     return __awaiter(this, void 0, void 0, function () {
-        var AidaEditar, AidEncontrado, queDeseaEditar, respuestaCampo, nuevonombreBanda, nuevoAnioConformacion, nuevoVocalista, nuevoAlbum, nuevonumeroIntegrantes;
+        var AidAEditar, AidEncontrado, queDeseaEditar, respuestaCampo, nuevonombreBanda, nuevoAnioConformacion, nuevoVocalista, nuevoAlbum, nuevonumeroIntegrantes;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, prompts({
@@ -152,9 +152,9 @@ function editarRegistro() {
                         message: 'Ingrese el Aid del Vengador cuya informacion desea editar'
                     })];
                 case 1:
-                    AidaEditar = _a.sent();
+                    AidAEditar = _a.sent();
                     AidEncontrado = Bandas.findIndex(function (valorActual) {
-                        return valorActual.Aid == AidaEditar.Aid;
+                        return valorActual.Aid == AidAEditar.Aid;
                     });
                     return [4 /*yield*/, prompts({
                             type: 'text',
@@ -254,5 +254,7 @@ function eliminarRegistro() {
     });
 }
 function main() {
+    console.log(".: BIENVENIDOS :.");
     crearDatosBandas().then().catch();
 }
+main();

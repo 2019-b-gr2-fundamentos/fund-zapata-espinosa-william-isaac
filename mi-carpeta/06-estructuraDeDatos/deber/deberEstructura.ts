@@ -48,7 +48,7 @@ async function queDeseaHacer(){
     const preguntas = await prompts({
         type: 'text',
         name: 'respuestas',
-        message: '¿Que desea hacer? \n 1-crear otro registro \n 2-leer los registros actuales \n 3-actualizar datos \n 4-eliminar registros \n 5-SALIR'
+        message: '¿Que desea hacer? \n 1-crear otro registro \n 2-leer los registros actuales \n 3-actualizar datos \n 4-eliminar registros \n 5-SALIR \n'
     });
     const respuesta1 = preguntas.respuestas;
     if(respuesta1 == 1){
@@ -66,7 +66,7 @@ async function queDeseaHacer(){
     }else if(respuesta1 == 5){
         console.log('ADIOS, ERES TU -> NO YO');
     }else{
-        console.log('Elija una opcion valida');
+        console.log('Elija una opcion valida, por favor!!!');
         queDeseaHacer().then().catch();
     };
     return preguntas.respuestas;
@@ -152,5 +152,7 @@ async function eliminarRegistro(){
 }
 
 function main(){
+    console.log(".: BIENVENIDOS :.")
     crearDatosBandas().then().catch();
 }
+main();
