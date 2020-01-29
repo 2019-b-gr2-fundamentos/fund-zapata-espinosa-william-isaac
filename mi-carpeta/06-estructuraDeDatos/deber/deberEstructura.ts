@@ -25,22 +25,22 @@ async function crearDatosBandas(){
             message: 'Inserte el nombre del primer Album de la Banda'
         },
         {
-            type: 'text',
+            type: 'number',
             name: 'numeroIntegrantes',
             message: 'Inserte el numero de integrantes de la Banda'
-        },
+        }
     ];
     const respuestaPreguntas = await prompts(preguntasBandas);
-    const nuevoRegistroBandas = {
+    const nuevoRegistroBanda = {
         Aid: id,
-        nombre: respuestaPreguntas.nombre,
+        nombreBanda: respuestaPreguntas.nombreBanda,
         anioConformacion: respuestaPreguntas.anioConformacion,
         vocalista: respuestaPreguntas.vocalista,
         primerAlbum: respuestaPreguntas.primerAlbum,
         numeroIntegrantes: respuestaPreguntas.numeroIntegrantes
     };
     id = id + 1;
-    Bandas.push(nuevoRegistroBandas);
+    Bandas.push(nuevoRegistroBanda);
     queDeseaHacer().then().catch();
 };
 
@@ -64,7 +64,7 @@ async function queDeseaHacer(){
         eliminarRegistro().then().catch();
 
     }else if(respuesta1 == 5){
-        console.log('ADIOS');
+        console.log('ADIOS, ERES TU -> NO YO');
     }else{
         console.log('Elija una opcion valida');
         queDeseaHacer().then().catch();
@@ -76,14 +76,14 @@ async function leerRegistros(){
     queDeseaHacer().then().catch();
 };
 async function editarRegistro(){
-    const AidaEditar = await prompts({
+    const AidAEditar = await prompts({
         type: 'number',
         name: 'Aid',
         message: 'Ingrese el Aid del Vengador cuya informacion desea editar'
     });
     const AidEncontrado = Bandas.findIndex(
         function(valorActual){
-            return valorActual.Aid == AidaEditar.Aid
+            return valorActual.Aid == AidAEditar.Aid
         }
     );
     const queDeseaEditar = await prompts({
@@ -95,38 +95,38 @@ async function editarRegistro(){
     if(respuestaCampo == 'nombreBanda'){
         const nuevonombreBanda = await prompts({
             type: 'text',
-            name: 'nuevonombreBanda',
+            name: 'newBanda',
             message: 'Ingrese el nuevo nombre de la Banda'
         });
-        Bandas[AidEncontrado].nombreBanda = nuevonombreBanda.nuevonombreBanda;
+        Bandas[AidEncontrado].nombreBanda = nuevonombreBanda.newBanda;
     } else if (respuestaCampo == 'anioConformacion') {
         const nuevoAnioConformacion = await prompts({
             type: 'number',
-            name: 'nuevoAnioConformacion',
+            name: 'newAnioConformacion',
             message: 'Ingrese el nuevo año de conformacion de la banda'
         });
-        Bandas[AidEncontrado].anioConformacion = nuevoAnioConformacion.nuevoAnioConformacion;
+        Bandas[AidEncontrado].anioConformacion = nuevoAnioConformacion.newAnioConformacion;
     } else if (respuestaCampo == 'vocalista'){
         const nuevoVocalista = await prompts({
             type: 'text',
-            name: 'nuevoVocalista',
+            name: 'newVocalista',
             message: 'Ingrese el NUEVO vocalista de la banda'
         });
-        Bandas[AidEncontrado].vocalista = nuevoVocalista.nuevoVocalista
+        Bandas[AidEncontrado].vocalista = nuevoVocalista.newVocalista
     } else if (respuestaCampo == 'primerAlbum'){
         const nuevoAlbum = await prompts({
             type: 'text',
-            name: 'nuevoAlbum',
+            name: 'newAlbum',
             message: 'Ingrese el nuevo primer album de la Banda '
         });
-        Bandas[AidEncontrado].primerAlbum = nuevoAlbum.nuevoAlbum;
+        Bandas[AidEncontrado].primerAlbum = nuevoAlbum.newAlbum;
     } else if (respuestaCampo == 'numeroIntegrantes'){
         const nuevonumeroIntegrantes = await prompts({
             type: 'number',
-            name: 'nuevonumeroIntegrantes',
+            name: 'newnumeroIntegrantes',
             message: 'Ingrese el nuevo numero de integrantes de la Banda '
         });
-        Bandas[AidEncontrado].numeroIntegrantes = nuevonumeroIntegrantes.nuevonumeroIntegrantes;
+        Bandas[AidEncontrado].numeroIntegrantes = nuevonumeroIntegrantes.newnumeroIntegrantes;
     } else {
         console.log("INGRESE UN CAMPO VALIDO");
     }

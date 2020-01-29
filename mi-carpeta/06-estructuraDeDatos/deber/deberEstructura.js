@@ -41,7 +41,7 @@ var id = 1;
 var Bandas = [];
 function crearDatosBandas() {
     return __awaiter(this, void 0, void 0, function () {
-        var preguntasBandas, respuestaPreguntas, nuevoRegistroBandas;
+        var preguntasBandas, respuestaPreguntas, nuevoRegistroBanda;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -67,24 +67,24 @@ function crearDatosBandas() {
                             message: 'Inserte el nombre del primer Album de la Banda'
                         },
                         {
-                            type: 'text',
+                            type: 'number',
                             name: 'numeroIntegrantes',
                             message: 'Inserte el numero de integrantes de la Banda'
-                        },
+                        }
                     ];
                     return [4 /*yield*/, prompts(preguntasBandas)];
                 case 1:
                     respuestaPreguntas = _a.sent();
-                    nuevoRegistroBandas = {
+                    nuevoRegistroBanda = {
                         Aid: id,
-                        nombre: respuestaPreguntas.nombre,
+                        nombreBanda: respuestaPreguntas.nombreBanda,
                         anioConformacion: respuestaPreguntas.anioConformacion,
                         vocalista: respuestaPreguntas.vocalista,
                         primerAlbum: respuestaPreguntas.primerAlbum,
                         numeroIntegrantes: respuestaPreguntas.numeroIntegrantes
                     };
                     id = id + 1;
-                    Bandas.push(nuevoRegistroBandas);
+                    Bandas.push(nuevoRegistroBanda);
                     queDeseaHacer().then().catch();
                     return [2 /*return*/];
             }
@@ -167,56 +167,56 @@ function editarRegistro() {
                     if (!(respuestaCampo == 'nombreBanda')) return [3 /*break*/, 4];
                     return [4 /*yield*/, prompts({
                             type: 'text',
-                            name: 'nuevonombreBanda',
+                            name: 'newBanda',
                             message: 'Ingrese el nuevo nombre de la Banda'
                         })];
                 case 3:
                     nuevonombreBanda = _a.sent();
-                    Bandas[AidEncontrado].nombreBanda = nuevonombreBanda.nuevonombreBanda;
+                    Bandas[AidEncontrado].nombreBanda = nuevonombreBanda.newBanda;
                     return [3 /*break*/, 13];
                 case 4:
                     if (!(respuestaCampo == 'anioConformacion')) return [3 /*break*/, 6];
                     return [4 /*yield*/, prompts({
                             type: 'number',
-                            name: 'nuevoAnioConformacion',
+                            name: 'newAnioConformacion',
                             message: 'Ingrese el nuevo año de conformacion de la banda'
                         })];
                 case 5:
                     nuevoAnioConformacion = _a.sent();
-                    Bandas[AidEncontrado].anioConformacion = nuevoAnioConformacion.nuevoAnioConformacion;
+                    Bandas[AidEncontrado].anioConformacion = nuevoAnioConformacion.newAnioConformacion;
                     return [3 /*break*/, 13];
                 case 6:
                     if (!(respuestaCampo == 'vocalista')) return [3 /*break*/, 8];
                     return [4 /*yield*/, prompts({
                             type: 'text',
-                            name: 'nuevoVocalista',
+                            name: 'newVocalista',
                             message: 'Ingrese el NUEVO vocalista de la banda'
                         })];
                 case 7:
                     nuevoVocalista = _a.sent();
-                    Bandas[AidEncontrado].vocalista = nuevoVocalista.nuevoVocalista;
+                    Bandas[AidEncontrado].vocalista = nuevoVocalista.newVocalista;
                     return [3 /*break*/, 13];
                 case 8:
                     if (!(respuestaCampo == 'primerAlbum')) return [3 /*break*/, 10];
                     return [4 /*yield*/, prompts({
                             type: 'text',
-                            name: 'nuevoAlbum',
+                            name: 'newAlbum',
                             message: 'Ingrese el nuevo primer album de la Banda '
                         })];
                 case 9:
                     nuevoAlbum = _a.sent();
-                    Bandas[AidEncontrado].primerAlbum = nuevoAlbum.nuevoAlbum;
+                    Bandas[AidEncontrado].primerAlbum = nuevoAlbum.newAlbum;
                     return [3 /*break*/, 13];
                 case 10:
                     if (!(respuestaCampo == 'numeroIntegrantes')) return [3 /*break*/, 12];
                     return [4 /*yield*/, prompts({
                             type: 'number',
-                            name: 'nuevonumeroIntegrantes',
+                            name: 'newnumeroIntegrantes',
                             message: 'Ingrese el nuevo numero de integrantes de la Banda '
                         })];
                 case 11:
                     nuevonumeroIntegrantes = _a.sent();
-                    Bandas[AidEncontrado].numeroIntegrantes = nuevonumeroIntegrantes.nuevonumeroIntegrantes;
+                    Bandas[AidEncontrado].numeroIntegrantes = nuevonumeroIntegrantes.newnumeroIntegrantes;
                     return [3 /*break*/, 13];
                 case 12:
                     console.log("INGRESE UN CAMPO VALIDO");

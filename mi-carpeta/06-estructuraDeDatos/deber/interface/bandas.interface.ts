@@ -5,4 +5,4 @@ export interface Banda {
     vocalista: string,
     primerAlbum: string,
     numeroIntegrantes: number
-}
+};
