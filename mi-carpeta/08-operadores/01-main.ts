@@ -1,3 +1,6 @@
+import { filter } from "./02-filter";
+import { some } from "./03-some";
+
 function main(){
 
     const arregloEstudiantes: any = [
@@ -101,11 +104,30 @@ function main(){
     console.log('respuestaReduce', respuestaReduce);
     console.log('Promedio', respuestaReduce/ arregloEstudiantes.length);
     console.log('arregloEstudiantes', arregloEstudiantes);
+    
 
-
-
-
-
+    const respuestaFilterNuestro = filter(
+        arregloEstudiantes,
+        function(valorActual,i, arr){
+            console.log('Valors:', valorActual);
+            console.log('Indice:',i);
+            console.log('Arreglo:',arr);
+            return valorActual.nota >= 7;
+        }
+        );
+        console.log('La respuesta nuestra filter: ',respuestaFilterNuestro)
+        console.log('arregloEstudiantes', arregloEstudiantes);
+    const respuestaEveryNuestro = some(
+        arregloEstudiantes,
+        function(valorActual, i, arr){
+            console.log('Valors:', valorActual);
+            console.log('Indice:',i);
+            console.log('Arreglo:',arr);
+            return valorActual.nota < 4;
+        }
+    );
+    console.log('La respuesta nuestra every: ',respuestaEveryNuestro)
+    console.log('arregloEstudiantes', arregloEstudiantes);
 
 
 }
