@@ -1,0 +1,14 @@
+{
+  "name": "deberuno",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "(tsc deberJuego.ts --target ES5 || echo) && node deberJuego.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tsc": "^1.20150623.0"
+  }
+}
