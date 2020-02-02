@@ -23,7 +23,7 @@ function restart() {
 	if (player!=1) makemove();
 }
 
-function hmove(i,j) {     //horizontal move by user
+function hmove(i,j) {     // Movimiento horizontal del usuario
 	if (hedge[i][j]<1) {
 		sethedge(i,j);
 		if (score[0]+score[1]==m*n) {
@@ -32,7 +32,7 @@ function hmove(i,j) {     //horizontal move by user
 	}
 }
 
-function vmove(i,j) {     //vertical move by user
+function vmove(i,j) {     // Movimiento vertical del usuario
 	if (vedge[i][j]<1) {
 		setvedge(i,j);
 		if (score[0]+score[1]==m*n) {
@@ -41,7 +41,7 @@ function vmove(i,j) {     //vertical move by user
 	}
 }
 
-function sethedge(x,y) {      //Sets horizontal edge
+function sethedge(x,y) {      // Establecer el borde horizontal
 	hedge[x][y]=1;
 	if (x>0) box[x-1][y]++;
 	if (x<m) box[x][y]++;
@@ -49,7 +49,7 @@ function sethedge(x,y) {      //Sets horizontal edge
 	player=1-player;
 }
 
-function setvedge(x,y) {      //Sets vertical edge
+function setvedge(x,y) {      // Establecer el borde vertical 
  	vedge[x][y]=1;
 	if (y>0) box[x][y-1]++;
 	if (y<n) box[x][y]++;
@@ -57,7 +57,7 @@ function setvedge(x,y) {      //Sets vertical edge
 	player=1-player;
 }
 
-function takeedge(zz,x,y) {    //Set hedge if zz=1 and vedge if zz=2.
+function takeedge(zz,x,y) {    // Establecer el borde horizontal si es zz = 1 y y el borde vertical si zz = 2
 	if (zz>1) setvedge(x,y);
 	else sethedge(x,y);
 }
