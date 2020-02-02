@@ -80,7 +80,7 @@ function makemove() {
 	else makeanymove();
 }
 
-function takesafe3s() {     //Take all singleton and doubleton 3's.
+function takesafe3s() {     //Cojer todos los simple y dobles 3´s
 	for (var i=0;i<m;i++) {
 		for (var j=0;j<n;j++) {
 			if (box[i][j]==3) {
@@ -98,7 +98,7 @@ function takesafe3s() {     //Take all singleton and doubleton 3's.
 	}
 }
 
-function sides3() {     //Returns true and u,v if there is a box(u,v)=3.
+function sides3() {     // Retorna verdad y u,v si hay un box(u, v)=3
 	for (var i=0;i<m;i++) {
 		for (var j=0;j<n;j++) {
 			if (box[i][j]==3) {
@@ -115,8 +115,8 @@ function takeall3s() {
 	while (sides3()) takebox(u,v);
 }
 
-function sides01() {     //Returns true and zz,x,y if there is a safe edge(x,y).
-	if (Math.random()<.5) zz=1; else zz=2;  //zz=1 if horizontal, zz=2 if vertical
+function sides01() {      // Retorna verdad y zz, x, y si hay un borde
+	if (Math.random()<.5) zz=1; else zz=2;  // zz=1 si hay horizontal, zz=2 si hay vertical 
 	var i=Math.floor(m*Math.random());
 	var j=Math.floor(n*Math.random());
 	if (zz==1) {
@@ -135,7 +135,7 @@ function sides01() {     //Returns true and zz,x,y if there is a safe edge(x,y).
 	return false;
 }
 
-function safehedge(i,j) {     //Returns true if (i,j) is a safe hedge
+function safehedge(i,j) {     // Retorna verdad si (i,j) si hay un forde horizontal
 	if (hedge[i][j]<1) {
 		if (i==0) {
 			if (box[i][j]<2) return true
@@ -192,8 +192,8 @@ function randvedge(i,j) {
 	} while (x!=i || y!=j);
 	return false
 }
-function singleton() {     //Returns true and zz,x,y if edge(x,y) gives exactly
-	var numb;              //1 square away
+function singleton() {     // Retorna verdad y zz, x, y si hay forde(x,y) exactamente
+	var numb;              // 1 cuadro de distancia
 	for (var i=0;i<m;i++) {
 		for (var j=0;j<n;j++) {
 			if (box[i][j]==2) {
@@ -233,8 +233,8 @@ function singleton() {     //Returns true and zz,x,y if edge(x,y) gives exactly
 	return false;
 }
 
-function doubleton() {     //Returns true and zz,x,y if edge(x,y) gives away 
-	zz=2;                  //exactly 2 squares
+function doubleton() {     // Retorna verdad y zz, x, y si existe un borde(x, y) 
+	zz=2;                  // Exactamente 2 cuadros
 	for (i=0;i<m;i++) {
 		for (j=0;j<n-1;j++) {
 			if (box[i][j]==2 && box[i][j+1]==2 && vedge[i][j+1]<1) {
@@ -261,8 +261,8 @@ function doubleton() {     //Returns true and zz,x,y if edge(x,y) gives away
 	return false
 }
 
-function ldub(i,j) {      //Given box(i,j)=2 and vedge(i,j+1)=0, returns true
-	if (vedge[i][j]<1) {      //if the other free edge leads to a box<2
+function ldub(i,j) {      // Entrega box(i, j) = 2 y borde vertical (i, j+1)= 0, retorna verdad
+	if (vedge[i][j]<1) {      // Si hay otro borde libre conduce a bos<2 
 		if (j<1 || box[i][j-1]<2) return true; 
 	} else if (hedge[i][j]<1) {
 		if (i<1 || box[i-1][j]<2) return true;
@@ -305,7 +305,7 @@ function ddub(i,j) {
 	return false
 }
 
-function sac(i,j) {     //sacrifices two squares if there are still 3's
+function sac(i,j) {     // Sacrifica dos cuadrados si todavía hay 3
     count=0;
 	loop=false;
 	incount(0,i,j);
@@ -322,9 +322,9 @@ function sac(i,j) {     //sacrifices two squares if there are still 3's
 	}
 }
 
-function incount(k,i,j) {  //enter with box[i][j]=3 and k=0
-    count++;               //returns count = number in chain starting at i,j
-	if (k!=1 && vedge[i][j]<1) {     //k=1,2,3,4 means skip left,up,right,down.
+function incount(k,i,j) {  // Ingrese en box[i][j] = 3 y k = 0
+    count++;               // Retorna count = number en cadena de starting a i,j
+	if (k!=1 && vedge[i][j]<1) {     // k=1,2,3,4 significa saltar a la izquierda, arriba, derecha, abajo.
 		if (j>0) {
 			if (box[i][j-1]>2) {
 				count++;
@@ -383,7 +383,7 @@ function takebox(i,j) {
 	else setvedge(i,j+1);
 }
 
-function outcount(k,i,j) {     //Takes all but count-2 squares and exits
+function outcount(k,i,j) {     // Toma todos menos un contador con 2 cuadros y sale
 	if (count>0) {
 		if (k!=1 && vedge[i][j]<1) {
 			if (count!=2) setvedge(i,j);
@@ -435,7 +435,7 @@ function makeanymove() {
 	if (player==0) makemove();
 }
 
-function checkh(x,y) {     //check if hedge move scores any points
+function checkh(x,y) {     // Comprobar si el movimiento de cobertura obtiene algún punto
 	var hit=0;
 	if (x>0) {
 		if (box[x-1][y]==4) {
