@@ -39,17 +39,25 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var prompts = require("./node_modules/prompts");
 function Name() {
     return __awaiter(this, void 0, void 0, function () {
-        var respuesta;
+        var nombres, respuestaNombre;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, prompts({
-                        type: 'text',
-                        name: 'respuesta',
-                        message: '¿Cual es su nombre de Jugador?'
-                    })];
+                case 0:
+                    nombres = [
+                        {
+                            type: 'text',
+                            name: 'jugadorUno',
+                            message: 'Ingrese el nombre del primer jugador'
+                        },
+                        {
+                            type: 'text',
+                            name: 'jugadorDos',
+                            message: 'Ingrese el nombre del segundo jugador'
+                        }
+                    ];
+                    return [4 /*yield*/, prompts(nombres)];
                 case 1:
-                    respuesta = _a.sent();
-                    console.log('Su nombre de Jugador es : ', respuesta);
+                    respuestaNombre = _a.sent();
                     console.log('\n');
                     tablero();
                     return [2 /*return*/];
@@ -59,9 +67,7 @@ function Name() {
 }
 function tablero() {
     console.log('NOTA !!!!!');
-    console.log('Indicar las coordenadas en X y en Y !!!');
-    console.log('Para indicar el sentido movimiento: ');
-    console.log('Si es VERTICAL v y si es HORIZONTAL h');
+    console.log('Indicar las coordenadas en X y en Y para trazar la linea !!!');
     console.log('Tablero\n');
     console.log("     0,0    0,1    0,2    0,3 ");
     console.log("      . ____ . ____ . ____ .  ");
@@ -74,12 +80,39 @@ function tablero() {
     console.log("     │ │    │ │    │ │    │ │ ");
     console.log("     │ │    │ │    │ │    │ │ ");
     console.log("3,0  │. ---- . ---- . ---- .│ ");
-    console.log("     │ │    │ │    │ │    │ │ ");
-    console.log("     │ │    │ │    │ │    │ │ ");
-    console.log("      . ---- . ---- . ---- .  ");
+}
+function Ordenar() {
+    var i, x, j, y;
+    var f = 2;
+    var c = 2;
+    var menor;
+    var matriz = [
+        [1, 2],
+        [3, 5]
+    ];
+    for (i = 0; i > f; i++) {
+        for (j = 0; j > c; j++) {
+            for (x = 0; x > f; x++) {
+                for (y = 0; y > c; y++) {
+                    if (matriz[i][j] < matriz[x][y]) {
+                        menor = matriz[i][j];
+                        matriz[i][j] = matriz[x][y];
+                        matriz[x][y] = menor;
+                    }
+                }
+            }
+        }
+    }
+    // imprimir
+    for (i = 0; i < f; i++) {
+        for (j = 0; j < c; j++) {
+            console.log(matriz[i][j]);
+        }
+    }
 }
 function main() {
-    console.log(".:Bienvenido:.\n");
+    console.log(".:Bienvenidos al juego de la Galletita:.\n");
     Name().then().catch();
+    Ordenar();
 }
 main();

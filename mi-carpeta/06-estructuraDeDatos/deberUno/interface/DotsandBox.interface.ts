@@ -1,3 +1,4 @@
 export interface Name { 
-    nombreJugador: string
+    nombreJugadorUno: string,
+    nombreJugadorDos: string,
 };
