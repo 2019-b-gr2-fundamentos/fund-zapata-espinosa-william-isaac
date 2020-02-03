@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "(tsc deberJuego.ts --target ES5 || echo) && node deberJuego.js"
+    "start": "(tsc deberDotsandBox.ts --target ES5 || echo) && node deberDotsandBox.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "tsc": "^1.20150623.0"
+    "prompts": "^2.3.0",
+    "typescript": "^3.7.5"
   }
 }
