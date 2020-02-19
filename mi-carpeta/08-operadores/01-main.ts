@@ -1,5 +1,9 @@
 import { filter } from "./02-filter";
-import { some } from "./03-some";
+import { map } from "./03-map";
+import { every } from "./04-every";
+import {reduce} from './05-reduce';
+import {some} from './07-some';
+import {forEach} from './06-forEach';
 
 function main(){
 
@@ -117,7 +121,7 @@ function main(){
         );
         console.log('La respuesta nuestra filter: ',respuestaFilterNuestro)
         console.log('arregloEstudiantes', arregloEstudiantes);
-    const respuestaEveryNuestro = some(
+    const respuestaEveryNuestro = every(
         arregloEstudiantes,
         function(valorActual, i, arr){
             console.log('Valors:', valorActual);
@@ -128,7 +132,42 @@ function main(){
     );
     console.log('La respuesta nuestra every: ',respuestaEveryNuestro)
     console.log('arregloEstudiantes', arregloEstudiantes);
-
+    const respuestaMapNuestro = map(
+        arregloEstudiantes,
+        function(valorActual, i, arr){
+            const nuevoObjeto={
+                id: valorActual.id,
+                nombre: valorActual.nombre,
+                nota20: valorActual.nota*2
+            };
+            return nuevoObjeto
+        }
+    );
+    console.log('La respuesta nuestra map: ',respuestaMapNuestro)
+    console.log('arregloEstudiantes', arregloEstudiantes);
+    const respuestaNuestroReduce = reduce(arregloEstudiantes,
+        function(acumulador, valorActual){ 
+            const operacion = acumulador + valorActual.nota;  
+            return operacion;
+        },
+    );
+    console.log('respuestaNuestroReduce', respuestaNuestroReduce);
+    console.log('arregloEstudiantes', arregloEstudiantes);
+    const respuestaSomeNuestro = some(arregloEstudiantes,
+        function(valorActual, i, arr){
+        console.log('Valor:', valorActual);
+        console.log('Indice:', i);
+        console.log('Arreglo:', arr);
+        return valorActual.nota <= 3;
+    });
+    console.log('respuestaSomeNuestro', respuestaSomeNuestro);
+    console.log('arregloEstudiantes', arregloEstudiantes);
+    const respuestaForEachNuestro = forEach(arregloEstudiantes,
+        function(valorActual, i, arr){
+            console.log(valorActual.nota);
+    });
+    console.log('respuestaForEachNuestro', respuestaForEachNuestro);
+    console.log('arregloEstudiantes', arregloEstudiantes);
 
 }
 main();
