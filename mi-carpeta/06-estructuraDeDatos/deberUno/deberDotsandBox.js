@@ -60,6 +60,7 @@ function Name() {
                     respuestaNombre = _a.sent();
                     console.log('\n');
                     tablero();
+                    jugadorUno();
                     return [2 /*return*/];
             }
         });
@@ -67,52 +68,156 @@ function Name() {
 }
 function tablero() {
     console.log('NOTA !!!!!');
-    console.log('Indicar las coordenadas en X y en Y para trazar la linea !!!');
+    console.log('Indicar los puntos para trazar la linea !!!');
     console.log('Tablero\n');
-    console.log("     0,0    0,1    0,2    0,3 ");
+    console.log("      0      1      2      3 ");
     console.log("      . ____ . ____ . ____ .  ");
     console.log("     │ │    │ │    │ │    │ │ ");
     console.log("     │ │    │ │    │ │    │ │ ");
-    console.log("1,0  │. ---- . ---- . ---- .│ ");
+    console.log("  4  │. ---- . ---- . ---- .│ ");
     console.log("     │ │    │ │    │ │    │ │ ");
     console.log("     │ │    │ │    │ │    │ │ ");
-    console.log("2,0  │. ---- . ---- . ---- .│ ");
+    console.log("  8  │. ---- . ---- . ---- .│ ");
     console.log("     │ │    │ │    │ │    │ │ ");
     console.log("     │ │    │ │    │ │    │ │ ");
-    console.log("3,0  │. ---- . ---- . ---- .│ ");
+    console.log("  12 │. ---- . ---- . ---- .│ ");
 }
-function Ordenar() {
-    var i, x, j, y;
-    var f = 2;
-    var c = 2;
-    var menor;
-    var matriz = [
-        [1, 2],
-        [3, 5]
-    ];
-    for (i = 0; i > f; i++) {
-        for (j = 0; j > c; j++) {
-            for (x = 0; x > f; x++) {
-                for (y = 0; y > c; y++) {
-                    if (matriz[i][j] < matriz[x][y]) {
-                        menor = matriz[i][j];
-                        matriz[i][j] = matriz[x][y];
-                        matriz[x][y] = menor;
-                    }
-                }
+;
+//function Ordenar(){
+//   let i, x, j, y;
+//   let f= 2;
+//   let c=2;
+//    let menor: any;
+//  let matriz =[
+//      [1,2],
+//      [3,5]
+//  ]
+//  for(i=0; i>f; i++)
+// {
+//  for(j=0; j>c; j++)
+//   {
+//     for(x=0; x>f;x++)
+//   {
+//     for(y=0; y>c; y++)
+//   {
+//     if(matriz[i][j]<matriz[x][y])
+//   {
+//     menor=matriz[i][j];
+//   matriz[i][j]=matriz[x][y];
+// matriz[x][y]=menor;
+//             }
+// 
+//              }
+//         }
+//     }
+// }
+// imprimir
+//for(i=0;i<f;i++){
+//    for(j=0; j<c;j++){
+//        console.log(matriz[i][j]);
+//    }
+//}
+//}
+function turnos() {
+    var movimientosUno;
+    var movimientosDos;
+}
+;
+function comparar() {
+    var contadorUno = 0;
+    var contadorDos = 0;
+    var sonIguales = compararUno; // Para uno
+    var areSame = compararDos; // Para dos 
+    if (sonIguales) {
+        contadorUno = contadorUno + 1;
+        // llenar de ceros
+        jugadorDos();
+    }
+    else {
+        jugadorDos();
+    }
+    ;
+    if (areSame) {
+        contadorDos = contadorDos + 1;
+        // lenar de ceros
+        // ver que -> Segun yo tendria que ir a jugadorUno
+    }
+    else {
+        // ver que -> Segun yo tendria que ir a jugadorUno
+    }
+}
+function jugadorUno() {
+    return __awaiter(this, void 0, void 0, function () {
+        var movimientoUno, respuestaMovimientoUno;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    movimientoUno = [
+                        {
+                            type: 'number',
+                            name: 'posicionUno',
+                            message: 'Ingrese la primera coordenada del primer punto para trazar la linea'
+                        },
+                        {
+                            type: 'number',
+                            name: 'posicionDos',
+                            message: 'Ingrese la segunda coordenada del segundo punto para trazar la linea'
+                        }
+                    ];
+                    return [4 /*yield*/, prompts(movimientoUno)];
+                case 1:
+                    respuestaMovimientoUno = _a.sent();
+                    console.log("El movimiento fue: ", respuestaMovimientoUno);
+                    jugadorDos();
+                    // Matriz tiene que ir a la funcion ordenar
+                    // Matiz tiene que ir a la funcion comparar
+                    return [2 /*return*/, respuestaMovimientoUno];
             }
+        });
+    });
+}
+;
+function jugadorDos() {
+    return __awaiter(this, void 0, void 0, function () {
+        var movimientosDos, respuestaMovimientoDos;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    movimientosDos = [
+                        {
+                            type: 'number',
+                            name: 'posicionUno',
+                            message: 'Ingrese la primera coordenada del primer punto para trazar la linea'
+                        },
+                        {
+                            type: 'number',
+                            name: 'posicionDos',
+                            message: 'Ingrese la segunda coordenada del segundo punto para trazar la linea'
+                        }
+                    ];
+                    return [4 /*yield*/, prompts(movimientosDos)];
+                case 1:
+                    respuestaMovimientoDos = _a.sent();
+                    console.log("El movimiento fue: ", respuestaMovimientoDos);
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+;
+function llenar() {
+    var matriz;
+    for (var i = 0; i <= 3; i++) {
+        for (var j = 0; j <= 3; j++) {
+            matriz[i][j];
         }
     }
-    // imprimir
-    for (i = 0; i < f; i++) {
-        for (j = 0; j < c; j++) {
-            console.log(matriz[i][j]);
-        }
-    }
+    console.log(matriz);
 }
 function main() {
     console.log(".:Bienvenidos al juego de la Galletita:.\n");
     Name().then().catch();
-    Ordenar();
+    // Ordenar();
+    llenar();
 }
 main();
